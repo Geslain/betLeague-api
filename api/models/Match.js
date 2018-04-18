@@ -8,6 +8,15 @@
 module.exports = {
 
   attributes: {
+    firstTeamScore : {
+      type: 'number'
+    },
+    secondTeamScore : {
+      type: 'number'
+    },
+    date : {
+      type: 'string'
+    },
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
@@ -23,7 +32,16 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-  },
+    firstTeam : {
+      model: 'team'
+    },
+    secondTeam : {
+      model: 'team'
+    },
+    step : {
+      model: 'step'
+    }
+  }
 
 };
 

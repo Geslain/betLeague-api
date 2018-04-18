@@ -8,6 +8,9 @@
 module.exports = {
 
   attributes: {
+    name: {
+      type: 'string'
+    },
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
@@ -23,7 +26,14 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-  },
+    usersList: {
+      collection: 'user',
+      via: 'groups'
+    },
+    room : {
+      model: 'groupRoom'
+    }
+  }
 
 };
 

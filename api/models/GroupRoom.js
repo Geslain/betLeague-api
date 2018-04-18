@@ -1,5 +1,5 @@
 /**
- * User.js
+ * TeamRoom.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,25 +8,17 @@
 module.exports = {
 
   attributes: {
+    name : {
+      type: 'string'
+    },
+    betAmount : {
+      type: 'number'
+    },
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    username : {
-      type: 'string',
-      unique: true,
-      required: true
-    },
-    firstname : {
-      type: 'string'
-    },
-    lastname : {
-      type: 'string'
-    },
-    email : {
-      type: 'string'
-    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -37,17 +29,9 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    prognosis: {
-      collection : 'prognosis',
-      via : 'user'
-    },
-    groups : {
+    groupsList : {
       collection: 'group',
-      via: 'usersList'
-    },
-    friends : {
-      collection: 'friend',
-      via: 'user'
+      via: 'room'
     }
   }
 

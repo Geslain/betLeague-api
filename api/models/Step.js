@@ -1,5 +1,5 @@
 /**
- * User.js
+ * Step.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,25 +8,14 @@
 module.exports = {
 
   attributes: {
+    name : {
+      type: 'string'
+    },
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    username : {
-      type: 'string',
-      unique: true,
-      required: true
-    },
-    firstname : {
-      type: 'string'
-    },
-    lastname : {
-      type: 'string'
-    },
-    email : {
-      type: 'string'
-    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -37,19 +26,14 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    prognosis: {
-      collection : 'prognosis',
-      via : 'user'
+    matchList : {
+      collection : 'match',
+      via : 'step'
     },
-    groups : {
-      collection: 'group',
-      via: 'usersList'
-    },
-    friends : {
-      collection: 'friend',
-      via: 'user'
+    event : {
+      model: 'event'
     }
-  }
+  },
 
 };
 

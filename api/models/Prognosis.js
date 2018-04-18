@@ -8,10 +8,10 @@
 module.exports = {
 
   attributes: {
-    firstTeamScore: {
+    firstTeamPrognosis: {
       type: 'number'
     },
-    secondTeamScore: {
+    secondTeamPrognosis: {
       type: 'number'
     },
 
@@ -29,13 +29,19 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    "user" : {
-      model: 'user',
+    user : {
+      model: 'user'
     },
-    "match" : {
+    match : {
       model: 'match'
+    },
+    group : {
+      model: 'group'
+    },
+    room : {
+      model: 'groupRoom'
     }
-  },
+  }
 
 };
 
