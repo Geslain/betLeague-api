@@ -51,14 +51,20 @@ module.exports = {
 
     let matchList = await Match.find({id: matchIdList}).populate("firstTeam").populate("secondTeam")
     let matchListByDay = []
-    matchList.map((match) => {
+    await Promise.all(matchList.map(async (match) => {
+      const prognosis = await Prognosis.findOne({ match: match.id})
       let matchDay = matchListByDay.find((day) => day.date === match.date)
+
+      if(typeof prognosis !== "undefined") {
+        match.firstTeamPrognosis = prognosis.firstTeamPrognosis
+        match.secondTeamPrognosis = prognosis.secondTeamPrognosis
+      }
       if(!matchDay){
         matchListByDay.push({date: match.date, matchList: [match]})
       } else {
         matchDay.matchList.push(match)
       }
-    })
+    }))
 
     matchListByDay.sort((first, second) => {
       const firstDate = moment(first.date,'DD/MM/YYYY');
