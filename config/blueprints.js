@@ -42,10 +42,11 @@ module.exports.blueprints = {
     // Get the default query options.
     var queryOptions = req._sails.hooks.blueprints.parseBlueprintOptions(req);
 
-    queryOptions.criteria.limit = 1000;
+    if (req.options.blueprintAction === 'find' || req.options.blueprintAction === 'populate') {
+      queryOptions.criteria.limit = 1000;
+    }
 
     return queryOptions;
-
   }
 
 };
