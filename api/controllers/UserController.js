@@ -8,7 +8,6 @@ const moment = require("moment")
 
 module.exports = {
   getDeepPrognosis: async function (req, res) {
-    console.log(req.params)
     let user = await User.findOne({id: req.params.id}).populate("prognosis")
 
     if (user) {
