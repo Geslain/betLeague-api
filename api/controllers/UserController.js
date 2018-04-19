@@ -23,12 +23,12 @@ module.exports = {
   },
 
   getAllPrognosisMatches: async function(req, res ) {
-    console.log(req.params)
-    let user = await User.findOne({id: req.params.id}).populate("prognosis")
+    let user = await User.findOne({id: req.params.id}).populate("groups")
 
     if(user) {
+      console.log(user)
       user.groups = await Promise.all(user.groups.map(async (group) => {
-        let rooms = await GroupRoom.find({id: group.rooms});
+        let rooms = await GroupRoom.find({id: group.rooms}).populate("event");
         console.log(rooms)
         return group
       }))

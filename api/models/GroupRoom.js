@@ -32,6 +32,9 @@ module.exports = {
     groupsList : {
       collection: 'group',
       via: 'rooms'
+    },
+    event: {
+      model: 'event',
     }
   }
 

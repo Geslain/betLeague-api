@@ -29,6 +29,10 @@ module.exports = {
     steps : {
       collection: 'step',
       via: 'event'
+    },
+    groupRooms: {
+      collection: 'groupRoom',
+      via: 'event'
     }
   }
 
