@@ -45,7 +45,8 @@ module.exports.routes = {
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
 
-  'GET /user/:id/getDeepPrognosis': 'UserController.getDeepPrognosis'
+  'GET /user/:id/getDeepPrognosis': 'UserController.getDeepPrognosis',
+  'GET /user/:id/getAllPrognosisMatches': 'UserController.getAllPrognosisMatches'
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗

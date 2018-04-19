@@ -30,8 +30,9 @@ module.exports = {
       collection: 'user',
       via: 'groups'
     },
-    room : {
-      model: 'groupRoom'
+    rooms : {
+      collection: 'groupRoom',
+      via: 'groupsList'
     }
   }
 

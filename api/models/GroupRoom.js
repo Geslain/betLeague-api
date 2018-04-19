@@ -31,7 +31,7 @@ module.exports = {
 
     groupsList : {
       collection: 'group',
-      via: 'room'
+      via: 'rooms'
     }
   }
 

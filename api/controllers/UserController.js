@@ -20,7 +20,23 @@ module.exports = {
     }
 
     res.json(user.prognosis);
-  }
+  },
 
+  getAllPrognosisMatches: async function(req, res ) {
+    console.log(req.params)
+    let user = await User.findOne({id: req.params.id}).populate("prognosis")
+
+    if(user) {
+      user.groups = await Promise.all(user.groups.map(async (group) => {
+        let rooms = await GroupRoom.find({id: group.rooms});
+        console.log(rooms)
+        return group
+      }))
+    } else {
+      throw new Error("User does not exists")
+    }
+
+    res.json(user.prognosis);
+  }
 };
 
